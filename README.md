@@ -2,7 +2,7 @@
 
 A small assignment and review dashboard for professors and students. Professors create assignments and watch the class complete them; students see what's due and confirm when they've submitted. Built for the Joineazy Frontend Intern assignment (Task 1).
 
-**Live demo:** _add your Vercel/Netlify link_
+**Live demo:** https://handin-eta.vercel.app/
 **Demo video:** _add your Loom link_
 
 No backend and no passwords. Everything is stored in `localStorage`, so data survives a refresh.
