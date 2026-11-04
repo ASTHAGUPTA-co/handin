@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  --color-paper: #faf7f2;
+  --color-ink: #1f1b16;
+  --color-ink-soft: #6b6257;
+  --color-line: #e8e1d6;
+  --color-card: #ffffff;
+  --color-brand: #d9480f;
+  --color-brand-dark: #b53a0a;
+  --color-moss: #2f7d4f;
+  --color-moss-soft: #e3f2e9;
+  --color-rust-soft: #fde8df;
+  --color-amber-soft: #fff3d6;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+html.dark body {
+  background: #17140f;
+  color: #f1ece3;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-rise { animation: rise 0.35s ease-out both; }
+.animate-pop { animation: pop 0.18s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise, .animate-pop { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
